@@ -1,0 +1,12 @@
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { NavigationContainer, useTheme } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ContactScreen from "./screens/ContactScreen";
+import HomeScreen from "./screens/HomeScreen";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import SignOut from "./screens/SignOut";
+import { SplashScreen } from "./screens/SplashScreen";
+import AulaTasksAdicionar from "./screens/AulaTaskAdicionar";
+import AulaTaskListar from "./screens/AulaTaskListar";
+import UserProfile from "./screens/UserProfile";
