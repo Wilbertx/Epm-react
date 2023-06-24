@@ -41,6 +41,58 @@ export default function LoginScreen({ navigation }) {
             setError("O email ou senha está incorreto!");
         }
       });
-  }
+
+      return (
+        <View style={styles.container}>
+          <Paragraph>Faça o seu Login</Paragraph>
+          <HelperText type="error"> {error} </HelperText>
+          <View style={styles.maxWidth}>
+            <Paragraph>E-mail</Paragraph>
+    
+              <TextInput
+                mode="outlined"
+                placeholder="Digite seu e-mail"
+                value={email}
+                onChangeText={setEmail}
+                style={styles.maxWidth}
+              />
+          </View>
+          <View style={styles.maxWidth}>
+            <Paragraph>Senha</Paragraph>
+            <TextInput
+              mode="outlined"
+              placeholder="Digite sua Senha"
+              value={senha}
+              onChangeText={setSenha}
+              secureTextEntry={passwordVisible}
+              style={styles.maxWidth}
+              right={
+                <TextInput.Icon
+                  icon={passwordVisible ? "eye" : "eye-off"}
+                  size={20}
+                  style={{ marginRight: 10 }}
+                  onPress={() => setPasswordVisible(!passwordVisible)}
+                />
+              }
+            />
+          </View>
+          <View style={{ flexDirection: "row", gap: 15 }}>
+            <View style={{ marginTop: 20 }}>
+              <Button
+                mode="contained"
+                onPress={() => navigation.navigate("RegisterScreen")}
+              >
+                Registrar
+              </Button>
+            </View>
+            <View style={{ marginTop: 20 }}>
+              <Button mode="contained" onPress={handleRegister}>
+                Acessar
+              </Button>
+            </View>
+          </View>
+        </View>
+      );
+    }
 
 }
